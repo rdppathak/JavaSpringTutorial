@@ -10,4 +10,5 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 </bean>
 
 <bean class="org.springcore.DemoBeanPostProcessor"/>
+<bean class="org.springcore.DemoBeanPostProcessor1"/>
 </beans>
