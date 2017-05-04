@@ -30,4 +30,12 @@ public class Restaurant {
 	public void prepareHotDrink(){
 		this.iHotDrink.prepareHotDrink();
 	}
+	
+	public void init(){
+		System.out.println("Restaurant class object init method");
+	}
+	
+	public void destroy(){
+		System.out.println("Restaurant class object destroy method");
+	}
 }
