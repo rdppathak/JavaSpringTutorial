@@ -12,7 +12,6 @@ public class ApplicationTest {
 		((AbstractApplicationContext)context).registerShutdownHook();
 		
 		Restaurant restaurantObj = (Restaurant) context.getBean("restaurantBean");
-		restaurantObj.setWelcomeNoteProperty("Setting object1 welcome note...!!");
 		restaurantObj.displayWelcomeNoteProperty();
 		
 		Restaurant restaurantObj2 = (Restaurant) context.getBean("restaurantBean");
