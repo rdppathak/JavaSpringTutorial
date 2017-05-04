@@ -5,7 +5,10 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-public class Restaurant {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Restaurant implements InitializingBean, DisposableBean{
 	private String welcomeNoteProperty;
 	private IHotDrink iHotDrink;
 	private List restaurantWaitersList;
@@ -34,13 +37,14 @@ public class Restaurant {
 		this.iHotDrink.prepareHotDrink();
 	}
 	
-	@PostConstruct
-	public void init(){
-		System.out.println("Restaurant class object init method");
-	}
-	
-	@PreDestroy
-	public void destroy(){
+	@Override
+	public void destroy() throws Exception {
 		System.out.println("Restaurant class object destroy method");
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Restaurant class object init using Initialzing Bean");
+		
 	}
 }
