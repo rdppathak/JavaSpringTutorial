@@ -9,6 +9,10 @@ public class ApplicationTest {
 	public static void main(String args[]){
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");
 		Restaurant restaurantObj = (Restaurant) context.getBean("restaurantBean");
-		restaurantObj.displayRestaurantWaitersList();
+		restaurantObj.setWelcomeNoteProperty("Setting object1 welcome note...!!");
+		restaurantObj.displayWelcomeNoteProperty();
+		
+		Restaurant restaurantObj2 = (Restaurant) context.getBean("restaurantBean");
+		restaurantObj2.displayWelcomeNoteProperty();
 	}
 }
