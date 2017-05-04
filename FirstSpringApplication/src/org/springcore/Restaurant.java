@@ -2,6 +2,9 @@ package org.springcore;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class Restaurant {
 	private String welcomeNoteProperty;
 	private IHotDrink iHotDrink;
@@ -31,10 +34,12 @@ public class Restaurant {
 		this.iHotDrink.prepareHotDrink();
 	}
 	
+	@PostConstruct
 	public void init(){
 		System.out.println("Restaurant class object init method");
 	}
 	
+	@PreDestroy
 	public void destroy(){
 		System.out.println("Restaurant class object destroy method");
 	}
