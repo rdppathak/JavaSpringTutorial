@@ -4,6 +4,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 <bean id="restaurantBean" class="org.springcore.Restaurant" scope="singleton">
+<property name="welcomeNoteProperty" value="${welcomeNote}"></property>
 </bean>
 
 <bean id="teaBean" class="org.springcore.Tea">
@@ -11,5 +12,11 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 
 <bean class="org.springcore.DemoBeanPostProcessor"/>
 <bean class="org.springcore.DemoBeanPostProcessor1"/>
-<bean class="org.springcore.DemoBeanFactoryPostProcessor"/>
+
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="locations">
+		<value>classpath:spring.properties</value>
+	</property>
+</bean>
+
 </beans>
