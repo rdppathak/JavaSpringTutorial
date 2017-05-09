@@ -1,0 +1,22 @@
+spring:
+  application:
+     name: employee-service
+  freemarker:
+    enabled: false          
+#  thymeleaf:
+#    cache: false             # Allow Thymeleaf templates to be reloaded at runtime
+#    prefix: classpath:/accounts-server/templates/    # Trailing / mandatory
+#                             # Template location for this application only
+#
+#error:
+#  path: /error
+
+server:
+  port: 2222
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5
