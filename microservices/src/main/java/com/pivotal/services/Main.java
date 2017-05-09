@@ -1,4 +1,4 @@
-package com.pivotal;
+package com.pivotal.services;
 
 import com.pivotal.services.employee.EmployeeService;
 import com.pivotal.services.registration.RegistrationService;
