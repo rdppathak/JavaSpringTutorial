@@ -5,20 +5,19 @@ import java.util.List;
 import java.util.concurrent.TimeoutException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class EmployeesController {
 	protected EmployeeRepository employeeRepository;
-	
-	
 
 	@Autowired
 	public EmployeesController(EmployeeRepository employeeRepository) throws IOException, TimeoutException{
 		this.employeeRepository = employeeRepository;
 	}
-	@RequestMapping("/EmployeesHome")
+	@RequestMapping(value = "/EmployeesHome")
 	public String employeesHome(){
 		return "Welcome to employees home page";
 	}
