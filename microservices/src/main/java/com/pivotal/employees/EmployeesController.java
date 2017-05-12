@@ -7,6 +7,7 @@ import java.util.concurrent.TimeoutException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,5 +28,12 @@ public class EmployeesController {
 		List<Employee> employee = null;
 		return employeeRepository.findAll();
 		
+	}
+	
+	@RequestMapping("/GetEmployee")
+	public Employee getEmployee(@RequestParam long id){
+		Employee e = null;
+		e = employeeRepository.findById(id);
+		return e;
 	}
 }
